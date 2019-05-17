@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <p></p>
+  <p><strong>Parent/Guardian Name:</strong> {{ entry }}</p>
+  <p><strong>Child's Birth Date:</strong> {{ entry.date_of_birth_of_child }}</p>
+  <p><strong>Email Address or Phone Number:</strong> {{ entry.contact_information }} </p>
+  <p><strong>Added to Waiting List:</strong> {{ entry.created_at }}</p>
+  <p><strong>Last Update:</strong> {{ entry.updated_at }}</p>
+
+  <form action="{{ request.path }}/update" method="get">
+    <input type="submit" value="Edit">
+  </form>
+
+  <form action="{{ request.path }}/delete" method="get">
+    <input type="submit" value="Delete">
+  </form>
+
+{% endblock %}
